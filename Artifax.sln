@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{662C35D7-ED2E-4ACC-870A-9B5C9AAC1201}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Artifax", "Artifax\Artifax.vcxproj", "{4DFA86DD-B06B-4A26-8E56-12ECA581F802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DFA86DD-B06B-4A26-8E56-12ECA581F802}.Debug|x64.ActiveCfg = Debug|x64
+		{4DFA86DD-B06B-4A26-8E56-12ECA581F802}.Debug|x64.Build.0 = Debug|x64
+		{4DFA86DD-B06B-4A26-8E56-12ECA581F802}.Release|x64.ActiveCfg = Release|x64
+		{4DFA86DD-B06B-4A26-8E56-12ECA581F802}.Release|x64.Build.0 = Release|x64
+		{662C35D7-ED2E-4ACC-870A-9B5C9AAC1201}.Debug|x64.ActiveCfg = Debug|x64
+		{662C35D7-ED2E-4ACC-870A-9B5C9AAC1201}.Debug|x64.Build.0 = Debug|x64
+		{662C35D7-ED2E-4ACC-870A-9B5C9AAC1201}.Release|x64.ActiveCfg = Release|x64
+		{662C35D7-ED2E-4ACC-870A-9B5C9AAC1201}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBAE7350-F83A-4334-AE67-044439BE1536}
+	EndGlobalSection
+EndGlobal
