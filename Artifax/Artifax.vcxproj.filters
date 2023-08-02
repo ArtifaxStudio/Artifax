@@ -27,9 +27,15 @@
     <ClInclude Include="src\Artifax\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
