@@ -150,9 +150,11 @@
     <ClInclude Include="src\Artifax\Application.h" />
     <ClInclude Include="src\Artifax\Core.h" />
     <ClInclude Include="src\Artifax\EntryPoint.h" />
+    <ClInclude Include="src\Artifax\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp" />
+    <ClCompile Include="src\Artifax\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
