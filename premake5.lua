@@ -42,7 +42,8 @@ project "Artifax"
 
         postbuildcommands
         {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{MKDIR} %{wks.location}/bin/" .. outputdir .. "/Sandbox"),
+            ("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/Artifax.dll")
         }
 
     filter "configurations:Debug"
@@ -86,10 +87,10 @@ project "Sandbox"
         staticruntime "On"
         systemversion "latest"
 
-        defines 
-        { 
-            "AX_PLATFORM_WINDOWS"
-        }
+	defines 
+	{ 
+		"AX_PLATFORM_WINDOWS"
+	}
 
     filter "configurations:Debug"
         defines "AX_DEBUG"
