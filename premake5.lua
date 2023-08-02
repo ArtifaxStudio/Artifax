@@ -42,7 +42,7 @@ project "Artifax"
 
         postbuildcommands
         {
-            ("{MKDIR} %{wks.location}/bin/" .. outputdir .. "/Sandbox"),
+			("{MKDIR} %{wks.location}/bin/" .. outputdir .. "/Sandbox"),
             ("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/Artifax.dll")
         }
 
@@ -57,7 +57,7 @@ project "Artifax"
     filter "configurations:Debug"
         defines "AX_DIST"
         optimize "On"
-		
+
 project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
@@ -67,8 +67,8 @@ project "Sandbox"
 
     files 
     { 
-        "%{prj.name}/src/.h",
-        "%{prj.name}/src/.cpp"
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp"
     }
 
     includedirs
@@ -87,10 +87,10 @@ project "Sandbox"
         staticruntime "On"
         systemversion "latest"
 
-        defines 
-        { 
-            "AX_PLATFORM_WINDOWS"
-        }
+	defines 
+	{ 
+		"AX_PLATFORM_WINDOWS"
+	}
 
     filter "configurations:Debug"
         defines "AX_DEBUG"
