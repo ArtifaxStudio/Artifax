@@ -1,9 +1,8 @@
 #pragma once
 
-#include "Artifax/Core.h"
+#include "axpch.h"
 
-#include <string>
-#include <functional>
+#include "Artifax/Core.h"
 
 namespace Artifax::Events
 {

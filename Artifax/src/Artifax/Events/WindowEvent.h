@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Artifax::Events
 {
 	class ARTIFAX_API WindowResizeEvent : public Event

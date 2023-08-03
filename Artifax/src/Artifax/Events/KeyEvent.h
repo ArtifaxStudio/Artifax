@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Artifax::Events
 {
 	class ARTIFAX_API KeyEvent : public Event

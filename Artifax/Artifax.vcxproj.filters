@@ -37,6 +37,7 @@
     <ClInclude Include="src\Artifax\Log.h">
       <Filter>Artifax</Filter>
     </ClInclude>
+    <ClInclude Include="src\axpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -45,5 +46,6 @@
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
+    <ClCompile Include="src\axpch.cpp" />
   </ItemGroup>
 </Project>

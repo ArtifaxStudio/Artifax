@@ -1,3 +1,4 @@
+#include "axpch.h"
 #include "Application.h"
 
 namespace Artifax
