@@ -15,8 +15,12 @@ project "Artifax"
     location "Artifax"
     kind "SharedLib"
     language "C++"
+
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "axpch.h"
+    pchsource "Artifax/src/axpch.cpp"
 
     files 
     { 
