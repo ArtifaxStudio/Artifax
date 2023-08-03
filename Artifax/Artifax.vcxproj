@@ -153,6 +153,11 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll ..\bin\Dist-windows-x8
     <ClInclude Include="src\Artifax\Application.h" />
     <ClInclude Include="src\Artifax\Core.h" />
     <ClInclude Include="src\Artifax\EntryPoint.h" />
+    <ClInclude Include="src\Artifax\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Artifax\Events\Event.h" />
+    <ClInclude Include="src\Artifax\Events\KeyEvent.h" />
+    <ClInclude Include="src\Artifax\Events\MouseEvent.h" />
+    <ClInclude Include="src\Artifax\Events\WindowEvent.h" />
     <ClInclude Include="src\Artifax\Log.h" />
   </ItemGroup>
   <ItemGroup>

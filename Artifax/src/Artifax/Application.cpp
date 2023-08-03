@@ -12,8 +12,9 @@ namespace Artifax
 
 	void Application::Run()
 	{
-		while (true)
-		{
-		}
+		AX_CORE_INFO("Application running");
+
+		while (true);
 	}
+
 }
