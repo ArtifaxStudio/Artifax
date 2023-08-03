@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Core.h"
+#include "Events/Event.h"
+#include "Events/WindowEvent.h"
+#include "Log.h"
 
 namespace Artifax
 {

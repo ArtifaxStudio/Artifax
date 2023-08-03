@@ -4,6 +4,9 @@
     <Filter Include="Artifax">
       <UniqueIdentifier>{348FA3A1-A06E-223D-A986-AD1315E5889E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Artifax\Events">
+      <UniqueIdentifier>{9898019B-8466-F5A0-6DFA-65C75967D105}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Artifax.h" />
@@ -15,6 +18,21 @@
     </ClInclude>
     <ClInclude Include="src\Artifax\EntryPoint.h">
       <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Events\ApplicationEvent.h">
+      <Filter>Artifax\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Events\Event.h">
+      <Filter>Artifax\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Events\KeyEvent.h">
+      <Filter>Artifax\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Events\MouseEvent.h">
+      <Filter>Artifax\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Events\WindowEvent.h">
+      <Filter>Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Log.h">
       <Filter>Artifax</Filter>
