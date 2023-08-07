@@ -33,5 +33,3 @@ namespace Artifax
 #define AX_WARN(...)			::Artifax::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define AX_ERROR(...)			::Artifax::Log::GetClientLogger()->error(__VA_ARGS__)
 #define AX_CRITICAL(...)		::Artifax::Log::GetClientLogger()->critical(__VA_ARGS__)
-
-

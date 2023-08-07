@@ -3,6 +3,7 @@
 
 //For use by Artifax applications
 #include "Artifax/Application.h"
+#include "Artifax/Layer.h"
 #include "Artifax/Log.h"
 
 // ---ENTRY POINT---------------
