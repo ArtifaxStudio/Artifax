@@ -4,10 +4,10 @@
 
 #include "LayerStack.h"
 #include "Events/Event.h"
-#include "Events/KeyEvent.h"
 #include "Events/WindowEvent.h"
 #include "Events/ApplicationEvent.h"
 #include "Log.h"
+#include "Window.h"
 
 namespace Artifax
 {
@@ -24,7 +24,7 @@ namespace Artifax
 		void PopLayer(Layer* layer);
 	private:
 		bool OnWindowClose(Events::WindowCloseEvent& e);
-		//std::unique_ptr<Window> m_Window;
+		std::unique_ptr<Window> m_Window;
 		LayerStack m_LayerStack;
 		bool m_Running = true;
 	};

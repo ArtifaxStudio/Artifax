@@ -38,7 +38,7 @@ namespace Artifax {
 
 	bool WindowsWindow::IsVSync() const
 	{
-		m_Data.VSync;
+		return m_Data.VSync;
 	}
 
 	void WindowsWindow::Init(const WindowProps& props)
@@ -46,6 +46,8 @@ namespace Artifax {
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
+
+		AX_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized) {
 			int success = glfwInit();

@@ -7,11 +7,11 @@
     <Filter Include="Artifax\Events">
       <UniqueIdentifier>{9898019B-8466-F5A0-6DFA-65C75967D105}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\Test2">
-      <UniqueIdentifier>{B50073EE-21C1-EE24-EAFB-37A2567B3301}</UniqueIdentifier>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Test">
-      <UniqueIdentifier>{45DC8C7C-3113-8E0D-DAFF-7310C6150A0F}</UniqueIdentifier>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +49,12 @@
     <ClInclude Include="src\Artifax\Log.h">
       <Filter>Artifax</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Window.h">
+      <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\axpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\axpch.cpp" />
   </ItemGroup>
