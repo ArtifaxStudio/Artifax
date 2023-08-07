@@ -11,6 +11,14 @@ workspace "Artifax"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution dir)
+-- struct(lua table) of includes
+IncludeDir = {}
+IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
+
+-- Include GLFW premake.lua here (kind a copy)
+include "Artifax/vendor/GLFW"
+
 project "Artifax"
     location "Artifax"
     kind "SharedLib"
@@ -31,7 +39,14 @@ project "Artifax"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"
