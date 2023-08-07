@@ -1,0 +1,6 @@
+[submodule "Artifax/vendor/spdlog"]
+	path = Artifax/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Artifax/vendor/GLFW"]
+	path = Artifax/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
