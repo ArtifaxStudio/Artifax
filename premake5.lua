@@ -68,14 +68,17 @@ project "Artifax"
 
     filter "configurations:Debug"
         defines "AX_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "AX_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Dist"
         defines "AX_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -114,12 +117,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "AX_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "AX_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Dist"
         defines "AX_DIST"
+        buildoptions "/MD"
         optimize "On"

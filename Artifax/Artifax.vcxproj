@@ -164,6 +164,8 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll ..\bin\Dist-windows-x8
     <ClInclude Include="src\Artifax\Events\KeyEvent.h" />
     <ClInclude Include="src\Artifax\Events\MouseEvent.h" />
     <ClInclude Include="src\Artifax\Events\WindowEvent.h" />
+    <ClInclude Include="src\Artifax\Layer.h" />
+    <ClInclude Include="src\Artifax\LayerStack.h" />
     <ClInclude Include="src\Artifax\Log.h" />
     <ClInclude Include="src\Artifax\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -171,6 +173,8 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll ..\bin\Dist-windows-x8
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp" />
+    <ClCompile Include="src\Artifax\Layer.cpp" />
+    <ClCompile Include="src\Artifax\LayerStack.cpp" />
     <ClCompile Include="src\Artifax\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\axpch.cpp">
