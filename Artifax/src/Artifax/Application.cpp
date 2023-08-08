@@ -10,6 +10,7 @@ namespace Artifax
 	Application::Application()
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application()
@@ -41,6 +42,7 @@ namespace Artifax
 
 		AX_CORE_TRACE("{0}", e);
 
+		//The events are passed starting from the END because the top layers should consume first the events(EX: UI Layer)
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); --it)
 		{
 			if (e.Handled)

@@ -4,6 +4,9 @@
 
 #include "Artifax/Core.h"
 #include "Artifax/Events/Event.h"
+#include "Artifax/Events/WindowEvent.h"
+#include "Artifax/Events/KeyEvent.h"
+#include "Artifax/Events/MouseEvent.h"
 
 namespace Artifax {
 
