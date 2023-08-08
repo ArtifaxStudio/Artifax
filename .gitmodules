@@ -4,3 +4,6 @@
 [submodule "Artifax/vendor/GLFW"]
 	path = Artifax/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Artifax/vendor/imgui"]
+	path = Artifax/vendor/imgui
+	url = https://github.com/Haadrade/imgui

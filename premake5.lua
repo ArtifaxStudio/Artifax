@@ -16,10 +16,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
 IncludeDir["Glad"] = "Artifax/vendor/Glad/include"
+IncludeDir["ImGui"] = "Artifax/vendor/imgui/include"
 
 -- Include GLFW premake.lua here (kind a copy)
 include "Artifax/vendor/GLFW"
 include "Artifax/vendor/Glad"
+include "Artifax/vendor/imgui"
 
 project "Artifax"
     location "Artifax"
@@ -43,13 +45,15 @@ project "Artifax"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.Glad}"
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links
     {
         "GLFW",
         "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 
