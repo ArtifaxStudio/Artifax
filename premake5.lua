@@ -15,9 +15,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- struct(lua table) of includes
 IncludeDir = {}
 IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
+IncludeDir["Glad"] = "Artifax/vendor/Glad/include"
 
 -- Include GLFW premake.lua here (kind a copy)
 include "Artifax/vendor/GLFW"
+include "Artifax/vendor/Glad"
 
 project "Artifax"
     location "Artifax"
@@ -40,12 +42,14 @@ project "Artifax"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
         "opengl32.lib"
     }
 
@@ -57,7 +61,8 @@ project "Artifax"
         defines 
         { 
             "AX_PLATFORM_WINDOWS",
-            "AX_BUILD_DLL"
+            "AX_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
