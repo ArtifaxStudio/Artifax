@@ -22,11 +22,18 @@ namespace Artifax
 		void OnEvent(Events::Event& e);
 		void PushLayer(Layer* layer);
 		void PopLayer(Layer* layer);
+
+		inline Window& GetWindow() const { return *m_Window; }
+	public:
+		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(Events::WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 		LayerStack m_LayerStack;
 		bool m_Running = true;
+	private:
+		static Application* s_Instance;
 	};
 
 	//To be define in client

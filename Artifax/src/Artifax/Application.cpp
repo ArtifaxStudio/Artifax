@@ -7,8 +7,13 @@ namespace Artifax
 {
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		AX_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	}
@@ -21,7 +26,7 @@ namespace Artifax
 	{
 		AX_CORE_INFO("Application running");
 
-		while (m_Running) 
+		while (m_Running)
 		{
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
@@ -43,11 +48,11 @@ namespace Artifax
 		AX_CORE_TRACE("{0}", e);
 
 		//The events are passed starting from the END because the top layers should consume first the events(EX: UI Layer)
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); --it)
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
+			(*--it)->OnEvent(e);
 			if (e.Handled)
 				break;
-			(*it)->OnEvent(e);
 		}
 	}
 
