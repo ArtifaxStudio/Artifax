@@ -5,7 +5,7 @@ class Sandbox : public Artifax::Application
 public:
 	Sandbox()
 	{
-
+		PushLayer(new Artifax::ImGuiLayer());
 	}
 
 	~Sandbox()

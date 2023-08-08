@@ -16,7 +16,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
 IncludeDir["Glad"] = "Artifax/vendor/Glad/include"
-IncludeDir["ImGui"] = "Artifax/vendor/imgui/include"
+IncludeDir["ImGui"] = "Artifax/vendor/imgui"
 
 -- Include GLFW premake.lua here (kind a copy)
 include "Artifax/vendor/GLFW"

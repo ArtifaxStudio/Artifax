@@ -17,10 +17,12 @@ namespace Artifax
 	void LayerStack::PushLayer(Layer* layer)
 	{
 		m_LayersInsert = m_Layers.emplace(m_LayersInsert, layer);
+		layer->OnAttach();
 	}
 	void LayerStack::PushOverlayLayer(Layer* overlay)
 	{
 		m_Layers.emplace_back(overlay);
+		overlay->OnAttach();
 	}
 	void LayerStack::PopLayer(Layer* layer)
 	{
@@ -30,6 +32,7 @@ namespace Artifax
 
 		m_Layers.erase(it);
 		m_LayersInsert--;
+		layer->OnDetach();
 	}
 	void LayerStack::PopOverlayLayer(Layer* overlay)
 	{
@@ -38,5 +41,6 @@ namespace Artifax
 		if (it == m_Layers.end()) return;
 
 		m_Layers.erase(it);
+		overlay->OnDetach();
 	}
 }
