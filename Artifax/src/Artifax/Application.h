@@ -20,7 +20,9 @@ namespace Artifax
 
 		void OnEvent(Events::Event& e);
 		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
 		void PopLayer(Layer* layer);
+		void PopOverlay(Layer* overlay);
 
 		inline Window& GetWindow() const { return *m_Window; }
 	public:

@@ -38,9 +38,6 @@ namespace Artifax
 				layer->OnUpdate();
 			}
 
-			auto [x, y] = Input::GetMousePosition();
-			AX_CORE_TRACE("{0}, {1}", x, y);
-
 			m_Window->OnUpdate();
 		}
 	}
@@ -66,9 +63,19 @@ namespace Artifax
 		m_LayerStack.PushLayer(layer);
 	}
 
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PushOverlayLayer(overlay);
+	}
+
 	void Application::PopLayer(Layer* layer)
 	{
 		m_LayerStack.PopLayer(layer);
+	}
+
+	void Application::PopOverlay(Layer* overlay)
+	{
+		m_LayerStack.PopOverlayLayer(overlay);
 	}
 
 	bool Application::OnWindowClose(Events::WindowCloseEvent& e)
