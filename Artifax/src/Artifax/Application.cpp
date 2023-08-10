@@ -1,7 +1,10 @@
 #include "axpch.h"
 
 #include "Application.h"
+
 #include <glad/glad.h>
+
+#include "Artifax/Input.h"
 
 namespace Artifax
 {
@@ -34,6 +37,9 @@ namespace Artifax
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			AX_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
