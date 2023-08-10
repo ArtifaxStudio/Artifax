@@ -10,8 +10,11 @@
 	#error "Artifax only support Windows!"
 #endif
 
+#if AX_DEBUG
+	#define AX_ENABLE_ASSERT
+#endif
+
 #ifdef AX_ENABLE_ASSERT
-{
 	#define AX_ASSERT(x,...) { if(!(x)) { AX_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 	#define AX_CORE_ASSERT(x,...) { if(!(x)) { AX_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 #else
