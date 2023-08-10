@@ -21,11 +21,13 @@ namespace Artifax
 }
 
 //Core log macros
-#define AX_CORE_TRACE(...)		::Artifax::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define AX_CORE_INFO(...)		::Artifax::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define AX_CORE_WARN(...)		::Artifax::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define AX_CORE_ERROR(...)		::Artifax::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define AX_CORE_CRITICAL(...)	::Artifax::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#ifdef AX_BUILD_DLL
+	#define AX_CORE_TRACE(...)		::Artifax::Log::GetCoreLogger()->trace(__VA_ARGS__)
+	#define AX_CORE_INFO(...)		::Artifax::Log::GetCoreLogger()->info(__VA_ARGS__)
+	#define AX_CORE_WARN(...)		::Artifax::Log::GetCoreLogger()->warn(__VA_ARGS__)
+	#define AX_CORE_ERROR(...)		::Artifax::Log::GetCoreLogger()->error(__VA_ARGS__)
+	#define AX_CORE_CRITICAL(...)	::Artifax::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#endif
 							  
 //Client log macros
 #define AX_TRACE(...)			::Artifax::Log::GetClientLogger()->trace(__VA_ARGS__)
