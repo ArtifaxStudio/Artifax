@@ -95,8 +95,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Artifax\Artifax.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST $(SolutionDir)\bin\Debug-windows-x86_64\Sandbox (mkdir $(SolutionDir)\bin\Debug-windows-x86_64\Sandbox)
-copy /B /Y ..\bin\Debug-windows-x86_64\Artifax\Artifax.dll ..\bin\Debug-windows-x86_64\Sandbox\Artifax.dll</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Artifax\Artifax.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Artifax\Artifax.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Artifax\Artifax.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,8 +123,7 @@ copy /B /Y ..\bin\Debug-windows-x86_64\Artifax\Artifax.dll ..\bin\Debug-windows-
       <ImportLibrary>..\bin\Release-windows-x86_64\Artifax\Artifax.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST $(SolutionDir)\bin\Release-windows-x86_64\Sandbox (mkdir $(SolutionDir)\bin\Release-windows-x86_64\Sandbox)
-copy /B /Y ..\bin\Release-windows-x86_64\Artifax\Artifax.dll ..\bin\Release-windows-x86_64\Sandbox\Artifax.dll</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Artifax\Artifax.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Artifax\Artifax.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Artifax\Artifax.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -153,8 +151,7 @@ copy /B /Y ..\bin\Release-windows-x86_64\Artifax\Artifax.dll ..\bin\Release-wind
       <ImportLibrary>..\bin\Dist-windows-x86_64\Artifax\Artifax.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST $(SolutionDir)\bin\Dist-windows-x86_64\Sandbox (mkdir $(SolutionDir)\bin\Dist-windows-x86_64\Sandbox)
-copy /B /Y ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll ..\bin\Dist-windows-x86_64\Sandbox\Artifax.dll</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Artifax\Artifax.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
