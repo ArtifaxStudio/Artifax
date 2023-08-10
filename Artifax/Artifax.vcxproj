@@ -166,9 +166,11 @@
     <ClInclude Include="src\Artifax\Events\WindowEvent.h" />
     <ClInclude Include="src\Artifax\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Artifax\Input.h" />
+    <ClInclude Include="src\Artifax\KeyCodes.h" />
     <ClInclude Include="src\Artifax\Layer.h" />
     <ClInclude Include="src\Artifax\LayerStack.h" />
     <ClInclude Include="src\Artifax\Log.h" />
+    <ClInclude Include="src\Artifax\MouseButtonCodes.h" />
     <ClInclude Include="src\Artifax\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
