@@ -71,8 +71,7 @@ project "Artifax"
 
         postbuildcommands
         {
-			("{MKDIR} %{wks.location}/bin/" .. outputdir .. "/Sandbox"),
-            ("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/Artifax.dll")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
         }
 
     filter "configurations:Debug"
