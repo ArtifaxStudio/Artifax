@@ -26,7 +26,7 @@ namespace Artifax
 		bool OnMouseScrolledEvent(Events::MouseScrolledEvent& e);
 		bool OnKeyPressedEvent(Events::KeyPressedEvent& e);
 		bool OnKeyReleasedEvent(Events::KeyReleasedEvent& e);
-		//bool OnKeyTypedEvent(Events::KeyTypedEvent& e);
+		bool OnKeyTypedEvent(Events::KeyTypedEvent& e);
 		bool OnWindowResizeEvent(Events::WindowResizeEvent& e);
 
 	private:
