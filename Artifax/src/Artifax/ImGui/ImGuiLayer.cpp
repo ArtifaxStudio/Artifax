@@ -80,5 +80,58 @@ namespace Artifax
 
 	void ImGuiLayer::OnEvent(Events::Event& event)
 	{
+		Events::EventDispatcher dispacher(event);
+		
+		dispacher.Dispatch<Events::MouseButtonPressedEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnMouseButtonPressedEvent));
+		dispacher.Dispatch<Events::MouseButtonReleasedEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnMouseButtonReleasedEvent));
+		dispacher.Dispatch<Events::MouseMovedEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnMouseMovedEvent));
+		dispacher.Dispatch<Events::MouseScrolledEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnMouseScrolledEvent));
+		dispacher.Dispatch<Events::KeyPressedEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnKeyPressedEvent));
+		//dispacher.Dispatch<Events::KeyTypedEvent>(AX_BIND_EVENT_FN(OnKeyTypedEvent));
+		dispacher.Dispatch<Events::KeyReleasedEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnKeyReleasedEvent));
+		dispacher.Dispatch<Events::WindowResizeEvent>(AX_BIND_EVENT_FN(ImGuiLayer::OnWindowResizeEvent));
+	}
+	bool ImGuiLayer::OnMouseButtonPressedEvent(Events::MouseButtonPressedEvent& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[e.GetMouseButton()] = true;
+		return false;
+	}
+
+	bool ImGuiLayer::OnMouseButtonReleasedEvent(Events::MouseButtonReleasedEvent& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[e.GetMouseButton()] = false;
+		return false;
+	}
+
+	bool ImGuiLayer::OnMouseMovedEvent(Events::MouseMovedEvent& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MousePos = ImVec2(e.GetX(), e.GetY());
+		return false;
+	}
+
+	bool ImGuiLayer::OnMouseScrolledEvent(Events::MouseScrolledEvent& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseWheelH += e.GetXOffset();
+		io.MouseWheel += e.GetYOffset();
+		return false;
+	}
+
+	bool ImGuiLayer::OnKeyPressedEvent(Events::KeyPressedEvent& e)
+	{
+		return false;
+	}
+
+	bool ImGuiLayer::OnKeyReleasedEvent(Events::KeyReleasedEvent& e)
+	{
+		return false;
+	}
+
+	bool ImGuiLayer::OnWindowResizeEvent(Events::WindowResizeEvent& e)
+	{
+		return false;
 	}
 }
