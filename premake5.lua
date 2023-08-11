@@ -14,14 +14,18 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution dir)
 -- struct(lua table) of includes
 IncludeDir = {}
+IncludeDir["spdlog"] = "Artifax/vendor/spdlog/include"
 IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
 IncludeDir["Glad"] = "Artifax/vendor/Glad/include"
 IncludeDir["ImGui"] = "Artifax/vendor/imgui"
+IncludeDir["glm"] = "Artifax/vendor/glm"
 
 -- Include GLFW premake.lua here (kind a copy)
+include "Artifax/vendor/spdlog"
 include "Artifax/vendor/GLFW"
 include "Artifax/vendor/Glad"
 include "Artifax/vendor/imgui"
+include "Artifax/vendor/glm"
 
 project "Artifax"
     location "Artifax"
@@ -43,10 +47,11 @@ project "Artifax"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.spdlog}",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -104,8 +109,9 @@ project "Sandbox"
 
     includedirs
     {
-        "Artifax/vendor/spdlog/include",
-        "Artifax/src"
+        "Artifax/src",
+        "%{IncludeDir.spdlog}",
+        "%{IncludeDir.glm}"
     }
 
     links
