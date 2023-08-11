@@ -52,6 +52,9 @@
     <ClInclude Include="src\Artifax\Input.h">
       <Filter>Artifax</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\KeyCodes.h">
+      <Filter>Artifax</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Layer.h">
       <Filter>Artifax</Filter>
     </ClInclude>
@@ -59,6 +62,9 @@
       <Filter>Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Log.h">
+      <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\MouseButtonCodes.h">
       <Filter>Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
@@ -74,8 +80,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\axpch.h" />
-    <ClInclude Include="src\Artifax\KeyCodes.h" />
-    <ClInclude Include="src\Artifax\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
