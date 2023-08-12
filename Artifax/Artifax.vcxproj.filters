@@ -85,6 +85,9 @@
     <ClCompile Include="src\Artifax\Application.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
+    <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp">
+      <Filter>Artifax\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp">
       <Filter>Artifax\ImGui</Filter>
     </ClCompile>

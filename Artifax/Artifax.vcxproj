@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp" />
+    <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Artifax\Layer.cpp" />
     <ClCompile Include="src\Artifax\LayerStack.cpp" />
