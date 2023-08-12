@@ -18,11 +18,11 @@ project "Glad"
 		"include"
 	}
 
--- PLATFORMS
+	-- PLATFORMS
 	filter "system:windows"
 		systemversion "latest"
 
--- CONFIGURATIONS
+	-- CONFIGURATIONS
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
