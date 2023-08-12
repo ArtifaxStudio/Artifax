@@ -65,6 +65,7 @@ namespace Artifax::Events
 			if (m_Event.GetEventType() != T::GetStaticType()) return false;
 
 			m_Event.Handled = func(*(T*)&m_Event);
+			return true;
 		}
 
 	private:
