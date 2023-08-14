@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Artifax/Window.h"
+#include "Artifax/Renderer/GraphicsContext.h"
 
-#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 namespace Artifax {
@@ -28,6 +28,7 @@ namespace Artifax {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
