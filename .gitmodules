@@ -7,6 +7,7 @@
 [submodule "Artifax/vendor/imgui"]
 	path = Artifax/vendor/imgui
 	url = https://github.com/Haadrade/imgui
+	branch = docking
 [submodule "Artifax/vendor/glm"]
 	path = Artifax/vendor/glm
 	url = https://github.com/Haadrade/glm
