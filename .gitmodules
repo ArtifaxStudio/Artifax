@@ -1,9 +1,11 @@
 [submodule "Artifax/vendor/spdlog"]
 	path = Artifax/vendor/spdlog
 	url = https://github.com/Haadrade/spdlog
+	branch = v1.x
 [submodule "Artifax/vendor/GLFW"]
 	path = Artifax/vendor/GLFW
 	url = https://github.com/Haadrade/glfw
+	branch = master
 [submodule "Artifax/vendor/imgui"]
 	path = Artifax/vendor/imgui
 	url = https://github.com/Haadrade/imgui
@@ -11,3 +13,4 @@
 [submodule "Artifax/vendor/glm"]
 	path = Artifax/vendor/glm
 	url = https://github.com/Haadrade/glm
+	branch = master
