@@ -31,7 +31,7 @@ namespace Artifax
 		layersContainer::iterator end() { return m_Layers.end(); }
 	private:
 		layersContainer m_Layers;
-		layersContainer::iterator m_LayersInsert;
+		unsigned int m_LayersInsertIndex{0};
 	};
 }
 
