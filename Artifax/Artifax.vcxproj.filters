@@ -10,8 +10,14 @@
     <Filter Include="Artifax\ImGui">
       <UniqueIdentifier>{5E9BAFED-CA5B-2B24-9396-74A1FF157000}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Artifax\Renderer">
+      <UniqueIdentifier>{5A2DC558-4626-E4AA-6F58-C92F5BB0C3B6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -64,8 +70,14 @@
     <ClInclude Include="src\Artifax\MouseButtonCodes.h">
       <Filter>Artifax</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
       <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Platform\Windows</Filter>
@@ -93,6 +105,9 @@
     </ClCompile>
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Platform\Windows</Filter>

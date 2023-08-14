@@ -11,6 +11,8 @@
 #include "GLFW/glfw3.h"
 #include <glad/glad.h>
 
+#include <Artifax/KeyCodes.h>
+
 namespace Artifax
 {
 	ImGuiLayer::ImGuiLayer()
