@@ -8,6 +8,8 @@
 #include "Log.h"
 #include "Window.h"
 
+#include "Artifax/ImGui/ImGuiLayer.h"
+
 namespace Artifax
 {
 	class ARTIFAX_API Application
@@ -31,6 +33,7 @@ namespace Artifax
 		bool OnWindowClose(Events::WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 		bool m_Running = true;
 

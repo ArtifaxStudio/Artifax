@@ -76,7 +76,7 @@
     <ClInclude Include="src\Artifax\Window.h">
       <Filter>Artifax</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
@@ -94,6 +94,9 @@
     <ClCompile Include="src\Artifax\Application.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
+    <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp">
+      <Filter>Artifax\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp">
       <Filter>Artifax\ImGui</Filter>
     </ClCompile>
@@ -106,7 +109,7 @@
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
