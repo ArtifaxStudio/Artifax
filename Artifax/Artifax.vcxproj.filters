@@ -76,7 +76,13 @@
     <ClInclude Include="src\Artifax\MouseButtonCodes.h">
       <Filter>Artifax</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\Buffer.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\Renderer.h">
       <Filter>Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Shader.h">
@@ -84,6 +90,9 @@
     </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
       <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>Platform\OpenGL</Filter>
@@ -95,9 +104,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\axpch.h" />
-    <ClInclude Include="src\Artifax\Renderer\Buffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Artifax\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -118,8 +124,17 @@
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\Buffer.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\Renderer.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Shader.cpp">
       <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>Platform\OpenGL</Filter>
@@ -131,8 +146,5 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\axpch.cpp" />
-    <ClCompile Include="src\Artifax\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Artifax\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>

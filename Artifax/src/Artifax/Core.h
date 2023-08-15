@@ -20,14 +20,10 @@
 
 #ifdef AX_ENABLE_ASSERT
 	#define AX_ASSERT(x,...) { if(!(x)) { AX_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
-	#ifdef AX_BUILD_DLL
-		#define AX_CORE_ASSERT(x,...) { if(!(x)) { AX_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
-	#endif
+	#define AX_CORE_ASSERT(x,...) { if(!(x)) { AX_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 #else
 	#define AX_ASSERT(x,...)
-	#ifdef AX_BUILD_DLL
-		#define AX_CORE_ASSERT(x,...)
-	#endif
+	#define AX_CORE_ASSERT(x,...)
 #endif
 
 #define BIT(x) (1 << x)
