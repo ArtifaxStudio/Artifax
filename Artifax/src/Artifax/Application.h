@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Core.h"
-
+#include "Core/Timestep.h"
 #include "LayerStack.h"
 #include "Events/WindowEvent.h"
 #include "Events/ApplicationEvent.h"
 #include "Log.h"
 #include "Window.h"
 
+#include "Artifax/ImGui/ImGuiLayer.h"
 #include "Artifax/Renderer/Shader.h"
 
 namespace Artifax
@@ -33,8 +34,10 @@ namespace Artifax
 		bool OnWindowClose(Events::WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
-		bool m_Running = true;
+		bool m_Running{ true };
+		float m_LastFrameTime{0};
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
 		std::unique_ptr<Shader> m_Shader;

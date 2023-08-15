@@ -8,8 +8,10 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Artifax::Timestep ts) override
 	{
+		AX_TRACE("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMiliseconds());
+
 		if (Artifax::Input::IsKeyPressed(AX_KEY_TAB))
 			AX_TRACE("Tab key is pressed");
 	}
@@ -30,7 +32,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Artifax::ImGuiLayer());
 	}
 
 	~Sandbox()

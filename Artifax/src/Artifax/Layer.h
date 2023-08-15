@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Core/Timestep.h"
 
 namespace Artifax
 {
@@ -13,7 +14,8 @@ namespace Artifax
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Artifax::Timestep ts) {}
+		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Events::Event& event) {}
 
 		inline const std::string& GetName() const { return m_DebugName; }
