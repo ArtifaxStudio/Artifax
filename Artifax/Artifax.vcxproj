@@ -143,6 +143,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Artifax\Renderer\Renderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Artifax.h" />
     <ClInclude Include="src\Artifax\Application.h" />
     <ClInclude Include="src\Artifax\Core.h" />
@@ -160,6 +162,7 @@
     <ClInclude Include="src\Artifax\LayerStack.h" />
     <ClInclude Include="src\Artifax\Log.h" />
     <ClInclude Include="src\Artifax\MouseButtonCodes.h" />
+    <ClInclude Include="src\Artifax\Renderer\Buffer.h" />
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Artifax\Renderer\Shader.h" />
     <ClInclude Include="src\Artifax\Window.h" />
@@ -169,12 +172,15 @@
     <ClInclude Include="src\axpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Artifax\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Artifax\Application.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Artifax\Layer.cpp" />
     <ClCompile Include="src\Artifax\LayerStack.cpp" />
     <ClCompile Include="src\Artifax\Log.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Artifax\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
