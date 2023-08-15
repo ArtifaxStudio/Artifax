@@ -9,7 +9,6 @@ namespace Artifax
 {
 	class LayerStack
 	{
-		typedef std::vector<Layer*> layersContainer;
 	public:
 		LayerStack();
 		~LayerStack();
@@ -27,10 +26,10 @@ namespace Artifax
 		/// <param name="overlay"></param>
 		void PopOverlayLayer(Layer* overlay);
 
-		layersContainer::iterator begin() { return m_Layers.begin(); }
-		layersContainer::iterator end() { return m_Layers.end(); }
+		std::vector<Layer*> ::iterator begin() { return m_Layers.begin(); }
+		std::vector<Layer*> ::iterator end() { return m_Layers.end(); }
 	private:
-		layersContainer m_Layers;
+		std::vector<Layer*>  m_Layers;
 		unsigned int m_LayersInsertIndex{0};
 	};
 }
