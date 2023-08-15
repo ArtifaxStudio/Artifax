@@ -8,6 +8,8 @@
 #include "Log.h"
 #include "Window.h"
 
+#include "Artifax/Renderer/Shader.h"
+
 namespace Artifax
 {
 	class ARTIFAX_API Application
@@ -35,6 +37,7 @@ namespace Artifax
 		bool m_Running = true;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

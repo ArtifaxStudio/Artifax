@@ -160,6 +160,7 @@
     <ClInclude Include="src\Artifax\Log.h" />
     <ClInclude Include="src\Artifax\MouseButtonCodes.h" />
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Artifax\Renderer\Shader.h" />
     <ClInclude Include="src\Artifax\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="src\Artifax\Layer.cpp" />
     <ClCompile Include="src\Artifax\LayerStack.cpp" />
     <ClCompile Include="src\Artifax\Log.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />

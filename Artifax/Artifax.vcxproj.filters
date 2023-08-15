@@ -89,6 +89,7 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\axpch.h" />
+    <ClInclude Include="src\Artifax\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -119,5 +120,6 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\axpch.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>
