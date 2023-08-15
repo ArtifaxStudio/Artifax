@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-
+#include "Core/Timestep.h"
 #include "LayerStack.h"
 #include "Events/WindowEvent.h"
 #include "Events/ApplicationEvent.h"
@@ -35,7 +35,8 @@ namespace Artifax
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
-		bool m_Running = true;
+		bool m_Running{ true };
+		float m_LastFrameTime{0};
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
 	private:
