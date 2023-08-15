@@ -9,6 +9,7 @@
 #include "Window.h"
 
 #include "Artifax/ImGui/ImGuiLayer.h"
+#include "Artifax/Renderer/Shader.h"
 
 namespace Artifax
 {
@@ -39,6 +40,7 @@ namespace Artifax
 		float m_LastFrameTime{0};
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};
