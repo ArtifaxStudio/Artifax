@@ -146,6 +146,7 @@
     <ClInclude Include="src\Artifax.h" />
     <ClInclude Include="src\Artifax\Application.h" />
     <ClInclude Include="src\Artifax\Core.h" />
+    <ClInclude Include="src\Artifax\Core\Timestep.h" />
     <ClInclude Include="src\Artifax\EntryPoint.h" />
     <ClInclude Include="src\Artifax\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Artifax\Events\Event.h" />

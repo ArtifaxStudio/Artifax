@@ -5,6 +5,9 @@
 #include "Artifax/Application.h"
 #include "Artifax/Log.h"
 #include "Artifax/Layer.h"
+
+#include "Artifax/Core/Timestep.h"
+
 #include "Artifax/ImGui/ImGuiLayer.h"
 
 #include "Artifax/Input.h"
