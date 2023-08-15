@@ -4,6 +4,9 @@
     <Filter Include="Artifax">
       <UniqueIdentifier>{348FA3A1-A06E-223D-A986-AD1315E5889E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Artifax\Core">
+      <UniqueIdentifier>{0C54FA2D-F8B6-89D2-A13C-C2888D7E5555}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Artifax\Events">
       <UniqueIdentifier>{9898019B-8466-F5A0-6DFA-65C75967D105}</UniqueIdentifier>
     </Filter>
@@ -30,6 +33,9 @@
     </ClInclude>
     <ClInclude Include="src\Artifax\Core.h">
       <Filter>Artifax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Core\Timestep.h">
+      <Filter>Artifax\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\EntryPoint.h">
       <Filter>Artifax</Filter>
@@ -73,11 +79,11 @@
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h">
       <Filter>Artifax\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\Shader.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
       <Filter>Artifax</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
-      <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>Platform\OpenGL</Filter>
@@ -89,7 +95,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\axpch.h" />
-    <ClInclude Include="src\Artifax\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -110,8 +115,8 @@
     <ClCompile Include="src\Artifax\Log.cpp">
       <Filter>Artifax</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
-      <Filter>Platform\OpenGL</Filter>
+    <ClCompile Include="src\Artifax\Renderer\Shader.cpp">
+      <Filter>Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>Platform\OpenGL</Filter>
