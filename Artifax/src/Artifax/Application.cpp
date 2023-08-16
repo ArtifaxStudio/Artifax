@@ -13,28 +13,6 @@ namespace Artifax
 
 	Application* Application::s_Instance = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
-	{
-		switch (type
-)
-		{
-			case Artifax::ShaderDataType::Float:	return	GL_FLOAT;
-			case Artifax::ShaderDataType::Float2:	return GL_FLOAT;
-			case Artifax::ShaderDataType::Float3:	return GL_FLOAT;
-			case Artifax::ShaderDataType::Float4:	return GL_FLOAT;
-			case Artifax::ShaderDataType::Int:		return GL_INT;
-			case Artifax::ShaderDataType::Int2:		return GL_INT;
-			case Artifax::ShaderDataType::Int3:		return GL_INT;
-			case Artifax::ShaderDataType::Int4:		return GL_INT;
-			case Artifax::ShaderDataType::Mat3:		return GL_FLOAT;
-			case Artifax::ShaderDataType::Mat4:		return GL_FLOAT;
-			case Artifax::ShaderDataType::Bool:		return GL_BOOL;
-		}
-
-		AX_CORE_ASSERT(false, "Unknown ShaderDataType!");
-		return 0;
-	}
-
 	Application::Application()
 	{
 		AX_CORE_ASSERT(!s_Instance, "Application already exists!");
@@ -45,9 +23,8 @@ namespace Artifax
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
-		
-		glGenVertexArrays(1, &m_VertexArray);
-		glBindVertexArray(m_VertexArray);
+
+		m_VertexArray.reset(VertexArray::Create());
 
 		float vertices[3 * 7] =
 		{
@@ -57,29 +34,12 @@ namespace Artifax
 		};
 
 		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
-
-		{
-			BufferLayout layout = {
-				{ShaderDataType::Float3, "a_Position"},
-				{ShaderDataType::Float4, "a_Color"}
-			};
-
-			m_VertexBuffer->SetLayout(layout);
-		}
-
-		uint32_t index = 0;
-		const BufferLayout& layout = m_VertexBuffer->GetLayout();
-		for each (const auto& element in layout)
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(index,
-				element.GetComponentCount(),
-				ShaderDataTypeToOpenGLBaseType(element.Type),
-				element.Normalized ? GL_TRUE : GL_FALSE,
-				layout.GetStride(),
-				(const void*)element.Offset);
-			index++;
-		}
+		BufferLayout layout = {
+			{ShaderDataType::Float3, "a_Position"},
+			{ShaderDataType::Float4, "a_Color"}
+		};
+		m_VertexBuffer->SetLayout(layout);
+		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
 
 		unsigned int indices[3] =
 		{
@@ -87,6 +47,7 @@ namespace Artifax
 		};
 
 		m_IndexBuffer.reset(IndexBuffer::Create(indices, 3));
+		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
 
 		std::string vertexSrc = R"(
 			#version 330 core
@@ -142,7 +103,7 @@ namespace Artifax
 
 			m_Shader->Bind();
 
-			glBindVertexArray(m_VertexArray);
+			m_VertexArray->Bind();
 			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for each (Layer * layer in m_LayerStack)
