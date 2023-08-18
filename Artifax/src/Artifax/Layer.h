@@ -16,7 +16,7 @@ namespace Artifax
 		virtual void OnDetach() {}
 		virtual void OnUpdate(Artifax::Timestep ts) {}
 		virtual void OnImGuiRender() {}
-		virtual void OnEvent(Events::Event& event) {}
+		virtual void OnEvent(Event& event) {}
 
 		inline const std::string& GetName() const { return m_DebugName; }
 	protected:

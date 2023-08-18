@@ -13,12 +13,6 @@
 
 #include "Artifax/ImGui/ImGuiLayer.h"
 
-#include "Artifax/Renderer/Shader.h"
-#include "Artifax/Renderer/Buffer.h"
-#include "Artifax/Renderer/VertexArray.h"
-
-#include "Artifax/Renderer/OrthographicCamera.h"
-
 namespace Artifax
 {
 	class ARTIFAX_API Application
@@ -29,7 +23,7 @@ namespace Artifax
 
 		void Run();
 
-		void OnEvent(Events::Event& e);
+		void OnEvent(Event& e);
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 		void PopLayer(Layer* layer);
@@ -39,21 +33,13 @@ namespace Artifax
 	public:
 		inline static Application& Get() { return *s_Instance; }
 	private:
-		bool OnWindowClose(Events::WindowCloseEvent& e);
+		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 		bool m_Running{ true };
 		float m_LastFrameTime{0};
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

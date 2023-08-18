@@ -78,7 +78,7 @@ namespace Artifax {
 				data.Width = width;
 				data.Height = height;
 
-				Events::WindowResizeEvent event(width, height);
+				WindowResizeEvent event(width, height);
 				data.EventCallback(event);
 			}
 		);
@@ -87,7 +87,7 @@ namespace Artifax {
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				Events::WindowCloseEvent event;
+				WindowCloseEvent event;
 				data.EventCallback(event);
 			}
 		);
@@ -100,19 +100,19 @@ namespace Artifax {
 				{
 					case GLFW_PRESS:
 					{
-						Events::KeyPressedEvent event(key, 0);
+						KeyPressedEvent event(key, 0);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						Events::KeyReleasedEvent event(key);
+						KeyReleasedEvent event(key);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_REPEAT:	
 					{
-						Events::KeyPressedEvent event(key, 1);
+						KeyPressedEvent event(key, 1);
 						data.EventCallback(event);
 						break;
 					}
@@ -125,7 +125,7 @@ namespace Artifax {
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keyCode)
 		{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				Events::KeyTypedEvent event(keyCode);
+				KeyTypedEvent event(keyCode);
 				data.EventCallback(event);
 		});
 
@@ -137,13 +137,13 @@ namespace Artifax {
 				{
 					case GLFW_PRESS:
 					{
-						Events::MouseButtonPressedEvent event(button);
+						MouseButtonPressedEvent event(button);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						Events::MouseButtonReleasedEvent event(button);
+						MouseButtonReleasedEvent event(button);
 						data.EventCallback(event);
 						break;
 					}
@@ -157,7 +157,7 @@ namespace Artifax {
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				Events::MouseScrolledEvent event((float)xOffset, (float)yOffset);
+				MouseScrolledEvent event((float)xOffset, (float)yOffset);
 				data.EventCallback(event);
 			}
 		);
@@ -166,7 +166,7 @@ namespace Artifax {
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				Events::MouseMovedEvent event((float)xPos, (float)yPos);
+				MouseMovedEvent event((float)xPos, (float)yPos);
 				data.EventCallback(event);
 			}
 		);
