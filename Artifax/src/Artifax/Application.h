@@ -17,6 +17,8 @@
 #include "Artifax/Renderer/Buffer.h"
 #include "Artifax/Renderer/VertexArray.h"
 
+#include "Artifax/Renderer/OrthographicCamera.h"
+
 namespace Artifax
 {
 	class ARTIFAX_API Application
@@ -50,6 +52,8 @@ namespace Artifax
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
