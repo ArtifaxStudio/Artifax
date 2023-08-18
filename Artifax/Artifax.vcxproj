@@ -143,6 +143,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Artifax\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Artifax\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Artifax.h" />
     <ClInclude Include="src\Artifax\Application.h" />
@@ -174,6 +177,9 @@
     <ClInclude Include="src\axpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Artifax\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Artifax\Application.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp" />
