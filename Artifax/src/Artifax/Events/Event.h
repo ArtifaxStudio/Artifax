@@ -4,7 +4,7 @@
 
 #include "Artifax/Core.h"
 
-namespace Artifax::Events
+namespace Artifax
 {
 	// TODO: change from a blocking event system to a bufferized event system
 

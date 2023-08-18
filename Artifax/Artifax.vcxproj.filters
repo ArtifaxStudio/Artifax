@@ -115,6 +115,7 @@
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Artifax\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -168,5 +169,6 @@
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

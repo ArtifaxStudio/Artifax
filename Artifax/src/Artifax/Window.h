@@ -28,7 +28,7 @@ namespace Artifax {
 	class ARTIFAX_API Window
 	{
 	public:
-		using EventCallbackFn = std::function<void(Events::Event&)>;
+		using EventCallbackFn = std::function<void(Event&)>;
 
 		virtual ~Window() {}
 
