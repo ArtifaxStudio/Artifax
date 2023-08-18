@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Artifax.h" />
     <ClInclude Include="src\Artifax\Application.h" />
     <ClInclude Include="src\Artifax\Core.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Artifax\Renderer\Renderer.h" />
     <ClInclude Include="src\Artifax\Renderer\Shader.h" />
+    <ClInclude Include="src\Artifax\Renderer\VertexArray.h" />
     <ClInclude Include="src\Artifax\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
@@ -172,6 +174,7 @@
     <ClInclude Include="src\axpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Artifax\Application.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp" />
@@ -181,6 +184,7 @@
     <ClCompile Include="src\Artifax\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Artifax\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Artifax\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Artifax\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
