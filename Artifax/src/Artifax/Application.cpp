@@ -2,9 +2,6 @@
 
 #include "Application.h"
 
-#include <glad/glad.h>
-
-#include "Artifax/Input.h"
 //TODO: nedeed for getting time until platform abstraction
 #include "glfw/glfw3.h"
 
@@ -147,17 +144,18 @@ namespace Artifax
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
-			glClearColor(0.1f, 0.1f, 0.1f, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			RenderCommand::SetClearColor(glm::vec4(0.1f, 0.1f, 0.1f, 1));
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
 
 			m_BlueShader->Bind();
-			m_SquareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_SquareVA);
 
 			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_VertexArray);
 
+			Renderer::EndScene();
 
 			for each (Layer * layer in m_LayerStack)
 			{

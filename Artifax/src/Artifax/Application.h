@@ -1,12 +1,15 @@
 #pragma once
 
-#include "Core.h"
-#include "Core/Timestep.h"
-#include "LayerStack.h"
-#include "Events/WindowEvent.h"
-#include "Events/ApplicationEvent.h"
-#include "Log.h"
-#include "Window.h"
+#include "Artifax/Core.h"
+#include "Artifax/Core/Timestep.h"
+#include "Artifax/LayerStack.h"
+#include "Artifax/Events/WindowEvent.h"
+#include "Artifax/Events/ApplicationEvent.h"
+#include "Artifax/Log.h"
+#include "Artifax/Window.h"
+
+#include "Artifax/Renderer/Renderer.h"
+#include "Artifax/Input.h"
 
 #include "Artifax/ImGui/ImGuiLayer.h"
 
