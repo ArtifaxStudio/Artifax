@@ -8,6 +8,8 @@ namespace Artifax
 {
 	VertexArray* VertexArray::Create()
 	{
+		AX_PROFILE_FUNCTION();
+
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:

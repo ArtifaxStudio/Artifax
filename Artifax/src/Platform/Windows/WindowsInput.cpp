@@ -10,6 +10,8 @@ namespace Artifax
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode)
 	{
+		AX_PROFILE_FUNCTION();
+
 		GLFWwindow* window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		int state = glfwGetKey(window, keycode);
 		return state == GLFW_PRESS || state == GLFW_REPEAT;
@@ -17,6 +19,8 @@ namespace Artifax
 
 	bool WindowsInput::IsMouseButtonPressedImpl(int button)
 	{
+		AX_PROFILE_FUNCTION();
+
 		GLFWwindow* window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		int state = glfwGetMouseButton(window, button);
 		return state == GLFW_PRESS;
@@ -24,6 +28,8 @@ namespace Artifax
 
 	std::pair<float, float> WindowsInput::GetMousePositionImpl()
 	{
+		AX_PROFILE_FUNCTION();
+
 		GLFWwindow* window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		double xpos, ypos;
 		glfwGetCursorPos(window, &xpos, &ypos);
@@ -32,12 +38,16 @@ namespace Artifax
 
 	float WindowsInput::GetMouseXImpl()
 	{
+		AX_PROFILE_FUNCTION();
+
 		auto [x, y] = GetMousePosition();
 		return x;
 	}
 
 	float WindowsInput::GetMouseYImpl()
 	{
+		AX_PROFILE_FUNCTION();
+
 		auto [x, y] = GetMousePosition();
 		return y;
 	}

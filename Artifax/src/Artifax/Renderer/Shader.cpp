@@ -10,6 +10,8 @@ namespace Artifax
 {
 	Shader::Shader(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
+		AX_PROFILE_FUNCTION();
+
 		// Create an empty vertex shader handle
 		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 
@@ -113,18 +115,26 @@ namespace Artifax
 	}
 	Shader::~Shader()
 	{
+		AX_PROFILE_FUNCTION();
+
 		glDeleteProgram(m_RendererID);
 	}
 	void Shader::Bind() const
 	{
+		AX_PROFILE_FUNCTION();
+
 		glUseProgram(m_RendererID);
 	}
 	void Shader::Unbind() const
 	{
+		AX_PROFILE_FUNCTION();
+
 		glUseProgram(0);
 	}
 	void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 	{
+		AX_PROFILE_FUNCTION();
+
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}

@@ -11,6 +11,8 @@ namespace Artifax
 
 	Application::Application()
 	{
+		AX_PROFILE_FUNCTION();
+
 		AX_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -27,10 +29,14 @@ namespace Artifax
 
 	void Application::Run()
 	{
+		AX_PROFILE_FUNCTION();
+
 		AX_CORE_INFO("Application running");
 
 		while (m_Running)
 		{
+			AX_PROFILE_SCOPE("Application main loop");
+
 			float time = (float)glfwGetTime(); //TODO: Platform::GetTime()
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
@@ -53,6 +59,8 @@ namespace Artifax
 
 	void Application::OnEvent(Event& e)
 	{
+		AX_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(AX_BIND_EVENT_FN(Application::OnWindowClose));
 
@@ -69,26 +77,36 @@ namespace Artifax
 
 	void Application::PushLayer(Layer* layer)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlayLayer(overlay);
 	}
 
 	void Application::PopLayer(Layer* layer)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_LayerStack.PopLayer(layer);
 	}
 
 	void Application::PopOverlay(Layer* overlay)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_LayerStack.PopOverlayLayer(overlay);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_Running = false;
 
 		AX_CORE_TRACE("Clossing Window");

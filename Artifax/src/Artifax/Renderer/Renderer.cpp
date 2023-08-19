@@ -8,6 +8,8 @@ namespace Artifax
 
 	void Renderer::BeginScene(const OrthographicCamera& camera)
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
 	}
 
@@ -17,6 +19,8 @@ namespace Artifax
 
 	void Renderer::Submit(std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray)
 	{
+		AX_PROFILE_FUNCTION();
+
 		shader->Bind();
 		shader->UploadUniformMat4("u_ViewProjection", m_SceneData->ViewProjectionMatrix);
 

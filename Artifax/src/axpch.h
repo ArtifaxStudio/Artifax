@@ -13,6 +13,8 @@
 #include <unordered_set>
 
 #include <Artifax/Log.h>
+#include <Artifax/MacrosUtils.h>
+#include <Artifax/Debug/Instrumentor.h>
 
 #ifdef AX_PLATFORM_WINDOWS
 	#include <Windows.h>

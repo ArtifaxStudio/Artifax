@@ -14,11 +14,15 @@ namespace Artifax
 	BufferLayout::BufferLayout(const std::initializer_list<BufferElement>& elements)
 		: m_Elements(elements)
 	{
+		AX_PROFILE_FUNCTION();
+
 		CalculateOffsetAndStride();
 	}
 
 	void BufferLayout::CalculateOffsetAndStride()
 	{
+		AX_PROFILE_FUNCTION();
+
 		for (auto& element : m_Elements)
 		{
 			uint32_t offset = 0;
@@ -37,6 +41,8 @@ namespace Artifax
 
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
 	{
+		AX_PROFILE_FUNCTION();
+
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:
@@ -62,6 +68,8 @@ namespace Artifax
 
 	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t count)
 	{
+		AX_PROFILE_FUNCTION();
+
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:
