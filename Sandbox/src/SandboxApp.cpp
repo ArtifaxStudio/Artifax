@@ -1,5 +1,12 @@
 #include <Artifax.h>
 
+#include <Platform/OpenGL/OpenGLShader.h>
+
+#include <imgui.h>
+
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 class ExampleLayer : public Artifax::Layer
 {
 public:
@@ -85,7 +92,7 @@ public:
 			}	
 		)";
 
-		m_Shader.reset(new Artifax::Shader(vertexSrc, fragmentSrc));
+		m_Shader.reset(Artifax::Shader::Create(vertexSrc, fragmentSrc));
 
 		std::string blueShaderVertexSrc = R"(
 			#version 330 core
@@ -110,19 +117,21 @@ public:
 
 			in vec3 v_Position;
 						
+			uniform vec3 u_Color;
+
 			void main()
 			{
-				color = vec4(0.2, 0.3, 0.8, 1);
+				color = vec4(u_Color, 1.0);
 			}	
 		)";
 
-		m_BlueShader.reset(new Artifax::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
+		m_FlatColorShader.reset(Artifax::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 private:
 	std::shared_ptr<Artifax::Shader> m_Shader;
 	std::shared_ptr<Artifax::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Artifax::Shader> m_BlueShader;
+	std::shared_ptr<Artifax::Shader> m_FlatColorShader;
 	std::shared_ptr<Artifax::VertexArray> m_SquareVA;
 
 	Artifax::OrthographicCamera m_Camera;
@@ -130,6 +139,8 @@ private:
 	float m_CameraMoveSpeed = 1.0f;
 	float m_CameraRotation = 0.0f;
 	float m_CameraRotationSpeed = 10.f;
+
+	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 public:
 
 	virtual void OnUpdate(Artifax::Timestep ts) override
@@ -158,15 +169,21 @@ public:
 
 		Artifax::Renderer::BeginScene(m_Camera);
 
-		Artifax::Renderer::Submit(m_BlueShader, m_SquareVA);
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_FlatColorShader)->Bind();
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+
+		Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA);
 		Artifax::Renderer::Submit(m_Shader, m_VertexArray);
+
 
 		Artifax::Renderer::EndScene();
 	}
 
 	virtual void OnImGuiRender() override
 	{
-
+		ImGui::Begin("Settings");
+		ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
+		ImGui::End();
 	}
 
 	virtual void OnEvent(Artifax::Event& event) override

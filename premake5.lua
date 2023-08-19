@@ -115,6 +115,7 @@ project "Sandbox"
     {
         "Artifax/src",
         "%{IncludeDir.spdlog}",
+        "%{IncludeDir.ImGui}",
         "%{IncludeDir.glm}"
     }
 
