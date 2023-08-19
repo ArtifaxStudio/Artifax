@@ -17,7 +17,7 @@ namespace Artifax
 	{
 	}
 
-	void Renderer::Submit(std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray)
+	void Renderer::Submit(Ref<Shader>& shader, const Ref<VertexArray>& vertexArray)
 	{
 		shader->Bind();
 		std::dynamic_pointer_cast<OpenGLShader>(shader)->UploadUniformMat4("u_ViewProjection", m_SceneData->ViewProjectionMatrix);
