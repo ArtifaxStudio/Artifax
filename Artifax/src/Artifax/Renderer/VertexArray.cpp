@@ -25,7 +25,7 @@ namespace Artifax
 			{
 				AX_CORE_ASSERT(false, "Unknown RenderAPI!");
 				return nullptr;
-		}
+			}
 		}
 	}
 }

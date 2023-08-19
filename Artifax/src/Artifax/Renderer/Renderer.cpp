@@ -1,6 +1,8 @@
 #include "axpch.h"
-
 #include "Renderer.h"
+
+#include "Platform/OpenGL/OpenGLShader.h"
+
 
 namespace Artifax
 {
@@ -22,7 +24,7 @@ namespace Artifax
 		AX_PROFILE_FUNCTION();
 
 		shader->Bind();
-		shader->UploadUniformMat4("u_ViewProjection", m_SceneData->ViewProjectionMatrix);
+		std::dynamic_pointer_cast<OpenGLShader>(shader)->UploadUniformMat4("u_ViewProjection", m_SceneData->ViewProjectionMatrix);
 
 		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);
