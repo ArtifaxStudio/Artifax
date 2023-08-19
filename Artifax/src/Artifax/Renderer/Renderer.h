@@ -13,7 +13,7 @@ namespace Artifax
 		static void BeginScene(const OrthographicCamera& camera);
 		static void EndScene();
 
-		static void Submit(std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray);
+		static void Submit(Ref<Shader>& shader, const Ref<VertexArray>& vertexArray);
 
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 	private:

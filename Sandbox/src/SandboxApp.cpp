@@ -21,7 +21,7 @@ public:
 			0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
 			0.0f, 0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
-		std::shared_ptr<Artifax::VertexBuffer> vertexBuffer;
+		Artifax::Ref<Artifax::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Artifax::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Artifax::BufferLayout layout = {
 			{Artifax::ShaderDataType::Float3, "a_Position"},
@@ -31,7 +31,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Artifax::IndexBuffer> indexBuffer;
+		Artifax::Ref<Artifax::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Artifax::IndexBuffer::Create(indices, 3));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -44,7 +44,7 @@ public:
 			 0.75f,  0.75f, 0.0f,
 			-0.75f,  0.75f, 0.0f
 		};
-		std::shared_ptr<Artifax::VertexBuffer> squareVB;
+		Artifax::Ref<Artifax::VertexBuffer> squareVB;
 		squareVB.reset(Artifax::VertexBuffer::Create(squaredVertices, sizeof(squaredVertices)));
 		squareVB->SetLayout(
 			{
@@ -54,7 +54,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		unsigned int squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Artifax::IndexBuffer> squareIB;
+		Artifax::Ref<Artifax::IndexBuffer> squareIB;
 		squareIB.reset(Artifax::IndexBuffer::Create(squareIndices, 6));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -128,11 +128,11 @@ public:
 		m_FlatColorShader.reset(Artifax::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 private:
-	std::shared_ptr<Artifax::Shader> m_Shader;
-	std::shared_ptr<Artifax::VertexArray> m_VertexArray;
+	Artifax::Ref<Artifax::Shader> m_Shader;
+	Artifax::Ref<Artifax::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Artifax::Shader> m_FlatColorShader;
-	std::shared_ptr<Artifax::VertexArray> m_SquareVA;
+	Artifax::Ref<Artifax::Shader> m_FlatColorShader;
+	Artifax::Ref<Artifax::VertexArray> m_SquareVA;
 
 	Artifax::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition = { 0.0f,0.0f,0.0f };
