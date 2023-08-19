@@ -82,10 +82,22 @@
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h">
       <Filter>Artifax\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\OrthographicCamera.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\RenderCommand.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Renderer.h">
       <Filter>Artifax\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\RendererAPI.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Shader.h">
+      <Filter>Artifax\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\VertexArray.h">
       <Filter>Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
@@ -97,6 +109,15 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -104,18 +125,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\axpch.h" />
-    <ClInclude Include="src\Artifax\Renderer\VertexArray.h">
-      <Filter>Artifax\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
-      <Filter>Artifax\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Artifax\Renderer\RendererAPI.h">
-      <Filter>Artifax\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Artifax\Renderer\RenderCommand.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Artifax\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
@@ -139,16 +148,37 @@
     <ClCompile Include="src\Artifax\Renderer\Buffer.cpp">
       <Filter>Artifax\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\OrthographicCamera.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\RenderCommand.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Renderer.cpp">
       <Filter>Artifax\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\RendererAPI.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Shader.cpp">
+      <Filter>Artifax\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\VertexArray.cpp">
       <Filter>Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -158,17 +188,5 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\axpch.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
-      <Filter>Artifax\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Artifax\Renderer\RendererAPI.cpp">
-      <Filter>Artifax\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Artifax\Renderer\VertexArray.cpp">
-      <Filter>Artifax\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Artifax\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Artifax\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>
