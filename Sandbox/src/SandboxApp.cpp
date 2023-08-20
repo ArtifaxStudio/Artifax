@@ -13,8 +13,10 @@ private:
 	Artifax::Ref<Artifax::Shader> m_Shader;
 	Artifax::Ref<Artifax::VertexArray> m_VertexArray;
 
-	Artifax::Ref<Artifax::Shader> m_FlatColorShader;
+	Artifax::Ref<Artifax::Shader> m_FlatColorShader, m_TextureShader;
 	Artifax::Ref<Artifax::VertexArray> m_SquareVA;
+
+	Artifax::Ref<Artifax::Texture2D> m_Texture;
 
 	Artifax::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition = { 0.0f,0.0f,0.0f };
@@ -56,18 +58,19 @@ public:
 
 		m_SquareVA.reset(Artifax::VertexArray::Create());
 
-		float squaredVertices[3 * 4] =
+		float squareVertices[5 * 4] =
 		{
-			-0.75f, -0.75f, 0.0f,
-			 0.75f, -0.75f, 0.0f,
-			 0.75f,  0.75f, 0.0f,
-			-0.75f,  0.75f, 0.0f
+			-0.75f, -0.75f, 0.0f, 0.0f, 0.0f,
+			 0.75f, -0.75f, 0.0f, 1.0f, 0.0f,
+			 0.75f,  0.75f, 0.0f, 1.0f, 1.0f,
+			-0.75f,  0.75f, 0.0f, 0.0f, 1.0f
 		};
 		Artifax::Ref<Artifax::VertexBuffer> squareVB;
-		squareVB.reset(Artifax::VertexBuffer::Create(squaredVertices, sizeof(squaredVertices)));
+		squareVB.reset(Artifax::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout(
 			{
 				{Artifax::ShaderDataType::Float3, "a_Position"},
+				{Artifax::ShaderDataType::Float2, "a_TexCoord"},
 			}
 		);
 		m_SquareVA->AddVertexBuffer(squareVB);
@@ -114,7 +117,7 @@ public:
 
 		m_Shader.reset(Artifax::Shader::Create(vertexSrc, fragmentSrc));
 
-		std::string blueShaderVertexSrc = R"(
+		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
@@ -131,7 +134,7 @@ public:
 			}	
 		)";
 
-		std::string blueShaderFragmentSrc = R"(
+		std::string flatColorShaderFragmentSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
@@ -146,7 +149,47 @@ public:
 			}	
 		)";
 
-		m_FlatColorShader.reset(Artifax::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
+		m_FlatColorShader.reset(Artifax::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
+			out vec2 v_TexCoord;
+						
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+			}	
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+						
+			uniform sampler2D u_Texture;
+
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}	
+		)";
+
+		m_TextureShader.reset(Artifax::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Artifax::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 public:
 
@@ -193,8 +236,11 @@ public:
 
 		glm::mat4 squareTransform = glm::translate(glm::mat4(1.0f), m_SquarePosition);
 
-		Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA, squareTransform);
-		Artifax::Renderer::Submit(m_Shader, m_VertexArray);
+		m_Texture->Bind();
+		Artifax::Renderer::Submit(m_TextureShader, m_SquareVA, squareTransform);
+
+		//Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA, squareTransform);
+		//Artifax::Renderer::Submit(m_Shader, m_VertexArray);
 
 
 		Artifax::Renderer::EndScene();

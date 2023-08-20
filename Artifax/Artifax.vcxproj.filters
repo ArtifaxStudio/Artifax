@@ -1,201 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Artifax">
-      <UniqueIdentifier>{348FA3A1-A06E-223D-A986-AD1315E5889E}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\Core">
-      <UniqueIdentifier>{0C54FA2D-F8B6-89D2-A13C-C2888D7E5555}</UniqueIdentifier>
+    <Filter Include="src\Artifax">
+      <UniqueIdentifier>{4B8FDDAA-B744-56A0-4039-5077ACED4CA4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\Debug">
-      <UniqueIdentifier>{AA3051ED-16F1-CC23-DF2B-16A14BAB1100}</UniqueIdentifier>
+    <Filter Include="src\Artifax\Core">
+      <UniqueIdentifier>{83FA1A41-6FF3-3993-9825-1F18847D199F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\Events">
-      <UniqueIdentifier>{9898019B-8466-F5A0-6DFA-65C75967D105}</UniqueIdentifier>
+    <Filter Include="src\Artifax\Debug">
+      <UniqueIdentifier>{01A68664-6DBC-84FA-B633-101C22895582}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\ImGui">
-      <UniqueIdentifier>{5E9BAFED-CA5B-2B24-9396-74A1FF157000}</UniqueIdentifier>
+    <Filter Include="src\Artifax\Events">
+      <UniqueIdentifier>{CFB8E5F8-BB9C-A64E-24FD-A0A1100091D0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Artifax\Renderer">
-      <UniqueIdentifier>{5A2DC558-4626-E4AA-6F58-C92F5BB0C3B6}</UniqueIdentifier>
+    <Filter Include="src\Artifax\ImGui">
+      <UniqueIdentifier>{B510E564-2127-E3FA-6A9E-6E1CD6F3B382}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="src\Artifax\Renderer">
+      <UniqueIdentifier>{513732C0-3DC6-BB89-E6E4-CF84D252CC2F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Artifax.h" />
+    <ClInclude Include="src\Artifax.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Artifax\Application.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Core.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Core\Timestep.h">
-      <Filter>Artifax\Core</Filter>
+      <Filter>src\Artifax\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Debug\Instrumentor.h">
-      <Filter>Artifax\Debug</Filter>
+      <Filter>src\Artifax\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\EntryPoint.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Events\ApplicationEvent.h">
-      <Filter>Artifax\Events</Filter>
+      <Filter>src\Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Events\Event.h">
-      <Filter>Artifax\Events</Filter>
+      <Filter>src\Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Events\KeyEvent.h">
-      <Filter>Artifax\Events</Filter>
+      <Filter>src\Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Events\MouseEvent.h">
-      <Filter>Artifax\Events</Filter>
+      <Filter>src\Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Events\WindowEvent.h">
-      <Filter>Artifax\Events</Filter>
+      <Filter>src\Artifax\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\ImGui\ImGuiLayer.h">
-      <Filter>Artifax\ImGui</Filter>
+      <Filter>src\Artifax\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Input.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\KeyCodes.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Layer.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\LayerStack.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Log.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\MacrosUtils.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\MouseButtonCodes.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Buffer.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\GraphicsContext.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\OrthographicCamera.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\RenderCommand.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Renderer.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\RendererAPI.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\Shader.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artifax\Renderer\Texture.h">
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Renderer\VertexArray.h">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Artifax\Window.h">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\axpch.h" />
+    <ClInclude Include="src\axpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Artifax\Application.cpp">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\ImGui\ImGuiBuild.cpp">
-      <Filter>Artifax\ImGui</Filter>
+      <Filter>src\Artifax\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\ImGui\ImGuiLayer.cpp">
-      <Filter>Artifax\ImGui</Filter>
+      <Filter>src\Artifax\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Layer.cpp">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\LayerStack.cpp">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Log.cpp">
-      <Filter>Artifax</Filter>
+      <Filter>src\Artifax</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Buffer.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\OrthographicCamera.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\RenderCommand.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Renderer.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\RendererAPI.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\Shader.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artifax\Renderer\Texture.cpp">
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Artifax\Renderer\VertexArray.cpp">
-      <Filter>Artifax\Renderer</Filter>
+      <Filter>src\Artifax\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\axpch.cpp" />
+    <ClCompile Include="src\axpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

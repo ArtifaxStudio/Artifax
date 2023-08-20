@@ -15,8 +15,10 @@
 #include "Artifax/Renderer/RenderCommand.h"
 
 #include "Artifax/Renderer/Buffer.h"
-#include "Artifax/Renderer/VertexArray.h"
 #include "Artifax/Renderer/Shader.h"
+#include "Artifax/Renderer/Texture.h"
+#include "Artifax/Renderer/VertexArray.h"
+
 
 #include "Artifax/Renderer/OrthographicCamera.h"
 

@@ -19,6 +19,7 @@ IncludeDir["GLFW"] = "Artifax/vendor/GLFW/include"
 IncludeDir["Glad"] = "Artifax/vendor/Glad/include"
 IncludeDir["ImGui"] = "Artifax/vendor/imgui"
 IncludeDir["glm"] = "Artifax/vendor/glm"
+IncludeDir["stb_image"] = "Artifax/vendor/stb_image"
 
 -- Include GLFW premake.lua here (kind a copy)
 include "Artifax/vendor/spdlog"
@@ -43,7 +44,9 @@ project "Artifax"
     files 
     { 
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/stb_image/**.h",
+        "%{prj.name}/vendor/stb_image/**.cpp"
     }
 
     defines
@@ -58,7 +61,8 @@ project "Artifax"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.stb_image}"
     }
 
     links
