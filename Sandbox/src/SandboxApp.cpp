@@ -30,6 +30,8 @@ public:
 	ExampleLayer()
 		: Layer("Example"), m_Camera(Artifax::OrthographicCamera(-1.6, 1.6f, -0.9f, 0.9f))
 	{
+		AX_PROFILE_FUNCTION();
+
 		m_VertexArray.reset(Artifax::VertexArray::Create());
 
 		float vertices[3 * 7] =
@@ -150,6 +152,8 @@ public:
 
 	virtual void OnUpdate(Artifax::Timestep ts) override
 	{
+		AX_PROFILE_FUNCTION();
+
 		if (Artifax::Input::IsKeyPressed(AX_KEY_A))
 			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		else if (Artifax::Input::IsKeyPressed(AX_KEY_D))

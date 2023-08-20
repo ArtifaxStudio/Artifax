@@ -47,6 +47,8 @@ namespace Artifax
 
 		uint32_t GetComponentCount() const
 		{
+			AX_PROFILE_FUNCTION();
+
 			switch (Type)
 			{
 				case Artifax::ShaderDataType::Float:	return 1;

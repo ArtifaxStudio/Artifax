@@ -9,6 +9,8 @@ namespace Artifax
 {
 	Shader* Shader::Create(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
+		AX_PROFILE_FUNCTION();
+
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:

@@ -9,14 +9,20 @@ namespace Artifax
 	public:
 		inline static void SetClearColor(const glm::vec4& color)
 		{
+			AX_PROFILE_FUNCTION();
+
 			s_RendererAPI->SetClearColor(color);
 		}
 		inline static void Clear()
 		{
+			AX_PROFILE_FUNCTION();
+
 			s_RendererAPI->Clear();
 		}
 		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
 		{
+			AX_PROFILE_FUNCTION();
+
 			s_RendererAPI->DrawIndexed(vertexArray);
 		}
 	private:
