@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef AX_PLATFORM_WINDOWS
 	#if AX_DYNAMIC_LINK
 		#ifdef AX_BUILD_DLL

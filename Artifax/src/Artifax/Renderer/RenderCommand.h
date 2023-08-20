@@ -19,7 +19,7 @@ namespace Artifax
 
 			s_RendererAPI->Clear();
 		}
-		inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
 		{
 			AX_PROFILE_FUNCTION();
 
