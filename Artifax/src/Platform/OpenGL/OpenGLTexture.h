@@ -1,5 +1,5 @@
 #pragma once
-#include "Artifax/Renderer/Textxure.h"
+#include "Artifax/Renderer/Texture.h"
 
 namespace Artifax
 {
@@ -12,7 +12,7 @@ namespace Artifax
 		virtual uint32_t GetWidth() const override { return m_Width; }
 		virtual uint32_t GetHeight() const override { return m_Height; }
 
-		virtual void Bind() const override;
+		virtual void Bind(uint32_t slot = 0) const override;
 
 	private:
 		std::string m_Path;
