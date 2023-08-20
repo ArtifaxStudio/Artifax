@@ -9,6 +9,23 @@
 
 class ExampleLayer : public Artifax::Layer
 {
+private:
+	Artifax::Ref<Artifax::Shader> m_Shader;
+	Artifax::Ref<Artifax::VertexArray> m_VertexArray;
+
+	Artifax::Ref<Artifax::Shader> m_FlatColorShader;
+	Artifax::Ref<Artifax::VertexArray> m_SquareVA;
+
+	Artifax::OrthographicCamera m_Camera;
+	glm::vec3 m_CameraPosition = { 0.0f,0.0f,0.0f };
+	float m_CameraMoveSpeed = 1.0f;
+	float m_CameraRotation = 0.0f;
+	float m_CameraRotationSpeed = 10.f;
+
+	glm::vec3 m_SquarePosition = glm::vec3(1.0f);
+	float m_SquareMoveSpeed = 1.0f;
+
+	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 public:
 	ExampleLayer()
 		: Layer("Example"), m_Camera(Artifax::OrthographicCamera(-1.6, 1.6f, -0.9f, 0.9f))
@@ -65,6 +82,7 @@ public:
 			layout(location = 1) in vec4 a_Color;
 
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 
 			out vec3 v_Position;
 			out vec4 v_Color;
@@ -73,7 +91,7 @@ public:
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 			}	
 		)";
 
@@ -100,13 +118,14 @@ public:
 			layout(location = 0) in vec3 a_Position;
 
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 
 			out vec3 v_Position;
 						
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 			}	
 		)";
 
@@ -127,20 +146,6 @@ public:
 
 		m_FlatColorShader.reset(Artifax::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
-private:
-	Artifax::Ref<Artifax::Shader> m_Shader;
-	Artifax::Ref<Artifax::VertexArray> m_VertexArray;
-
-	Artifax::Ref<Artifax::Shader> m_FlatColorShader;
-	Artifax::Ref<Artifax::VertexArray> m_SquareVA;
-
-	Artifax::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition = { 0.0f,0.0f,0.0f };
-	float m_CameraMoveSpeed = 1.0f;
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 10.f;
-
-	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 public:
 
 	virtual void OnUpdate(Artifax::Timestep ts) override
@@ -160,19 +165,31 @@ public:
 		else if(Artifax::Input::IsKeyPressed(AX_KEY_E))
 			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
+		if (Artifax::Input::IsKeyPressed(AX_KEY_LEFT))
+			m_SquarePosition.x -= m_SquareMoveSpeed * ts;
+		else if (Artifax::Input::IsKeyPressed(AX_KEY_RIGHT))
+			m_SquarePosition.x += m_SquareMoveSpeed * ts;
+
+		if (Artifax::Input::IsKeyPressed(AX_KEY_UP))
+			m_SquarePosition.y += m_SquareMoveSpeed * ts;
+		else if (Artifax::Input::IsKeyPressed(AX_KEY_DOWN))
+			m_SquarePosition.y -= m_SquareMoveSpeed * ts;
+
 
 		Artifax::RenderCommand::SetClearColor(glm::vec4(0.1f, 0.1f, 0.1f, 1));
 		Artifax::RenderCommand::Clear();
 
 		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
+		m_Camera.SetRotation(m_CameraRotation); 
 
 		Artifax::Renderer::BeginScene(m_Camera);
 
 		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_FlatColorShader)->Bind();
 		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
 
-		Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA);
+		glm::mat4 squareTransform = glm::translate(glm::mat4(1.0f), m_SquarePosition);
+
+		Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA, squareTransform);
 		Artifax::Renderer::Submit(m_Shader, m_VertexArray);
 
 
