@@ -10,10 +10,12 @@
 class ExampleLayer : public Artifax::Layer
 {
 private:
+	Artifax::ShaderLibrary m_ShaderLibrary;
+
 	Artifax::Ref<Artifax::Shader> m_Shader;
 	Artifax::Ref<Artifax::VertexArray> m_VertexArray;
 
-	Artifax::Ref<Artifax::Shader> m_FlatColorShader, m_TextureShader;
+	Artifax::Ref<Artifax::Shader> m_FlatColorShader;
 	Artifax::Ref<Artifax::VertexArray> m_SquareVA;
 
 	Artifax::Ref<Artifax::Texture2D> m_Texture;
@@ -115,7 +117,7 @@ public:
 			}	
 		)";
 
-		m_Shader.reset(Artifax::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Artifax::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -149,14 +151,14 @@ public:
 			}	
 		)";
 
-		m_FlatColorShader.reset(Artifax::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Artifax::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Artifax::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Artifax::Texture2D::Create("assets/textures/Checkerboard.png");
 
-		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Artifax::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Artifax::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 public:
 
@@ -203,8 +205,10 @@ public:
 
 		glm::mat4 squareTransform = glm::translate(glm::mat4(1.0f), m_SquarePosition);
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Artifax::Renderer::Submit(m_TextureShader, m_SquareVA, squareTransform);
+		Artifax::Renderer::Submit(textureShader, m_SquareVA, squareTransform);
 
 		//Artifax::Renderer::Submit(m_FlatColorShader, m_SquareVA, squareTransform);
 		//Artifax::Renderer::Submit(m_Shader, m_VertexArray);
