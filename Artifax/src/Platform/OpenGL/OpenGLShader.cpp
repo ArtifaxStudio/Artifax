@@ -87,8 +87,10 @@ namespace Artifax
 
 	std::string OpenGLShader::ReadFile(const std::string& filepath)
 	{
+		AX_PROFILE_FUNCTION();
+
 		std::string result;
-		std::ifstream in(filepath, std::ios::in, std::ios::binary);
+		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 
 		if (!in)
 		{
@@ -111,6 +113,8 @@ namespace Artifax
 	}
 	std::unordered_map<GLenum, std::string> OpenGLShader::PreProcess(const std::string& source)
 	{
+		AX_PROFILE_FUNCTION();
+
 		std::unordered_map< GLenum,std::string> shaderSources;
 
 		const char* typeToken = "#type";
@@ -134,12 +138,16 @@ namespace Artifax
 	}
 	void OpenGLShader::Compile(const std::unordered_map<GLenum, std::string>& shaderSources)
 	{
+		AX_PROFILE_FUNCTION();
+
 		// Vertex and fragment shaders are successfully compiled.
 		// Now time to link them together into a program.
 		// Get a program object.
 		GLuint program = glCreateProgram();
 
-		std::vector<GLenum> glShaderIDs(shaderSources.size());
+		AX_CORE_ASSERT(shaderSources.size() <= 2, "Only 2 shaders supported!");
+		std::array<GLenum,2> glShaderIDs;
+		int glShaderIDIndex = 0;
 
 		for (auto& kv : shaderSources)
 		{
@@ -178,7 +186,7 @@ namespace Artifax
 			}
 
 			glAttachShader(program, shader);
-			glShaderIDs.push_back(shader);
+			glShaderIDs[glShaderIDIndex++] = (shader);
 		}
 
 		// Link our program
