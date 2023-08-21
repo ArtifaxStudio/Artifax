@@ -95,6 +95,8 @@ namespace Artifax
 			AX_CORE_ERROR("Could not open file '{0}'", filepath);
 		}
 
+		//TODO: Make a custom file system for multiplatform support
+
 		//Get the end of the file
 		in.seekg(0, std::ios::end);
 		//Get the size at the end of the file
