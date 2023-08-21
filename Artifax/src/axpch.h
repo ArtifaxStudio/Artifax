@@ -11,6 +11,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <array>
 
 #include <Artifax/Log.h>
 #include <Artifax/MacrosUtils.h>
