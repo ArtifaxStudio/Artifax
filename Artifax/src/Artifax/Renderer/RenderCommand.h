@@ -7,6 +7,12 @@ namespace Artifax
 	class RenderCommand
 	{
 	public:
+		inline static void Init()
+		{
+			AX_PROFILE_FUNCTION();
+
+			s_RendererAPI->Init();
+		}
 		inline static void SetClearColor(const glm::vec4& color)
 		{
 			AX_PROFILE_FUNCTION();
